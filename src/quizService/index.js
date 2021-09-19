@@ -1,3 +1,4 @@
+import {NUMBER_OF_QUSTION} from './numberOfQuestion';
 const qBank = [
     {
       question:
@@ -371,5 +372,5 @@ const qBank = [
     }
   ];
     
-  export default (n = 5) =>
+  export default (n = NUMBER_OF_QUSTION) =>
   Promise.resolve(qBank.sort(() => 0.5 - Math.random()).slice(0, n));

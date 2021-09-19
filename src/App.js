@@ -3,6 +3,7 @@ import './App.css';
 import quizService from './quizService/index';
 import QuestionBox from './components/QuestionBox';
 import Result from './components/Result';
+import {NUMBER_OF_QUSTION} from './quizService/numberOfQuestion';
 
 let initalState={
   questions:[],
@@ -35,7 +36,7 @@ function App() {
       <div className="title">QuizBee</div>
       {
         data.questions.length > 0 &&
-        data.atempt < 5 &&
+        data.atempt < NUMBER_OF_QUSTION &&
         data.questions.map(({question,answers,correct,questionId})=>
         <QuestionBox
         question={question}
@@ -45,7 +46,7 @@ function App() {
         ></QuestionBox>)
       }
       {
-        data.atempt === 5 &&
+        data.atempt === NUMBER_OF_QUSTION &&
         <Result 
         score={data.score}
         atempt={data.atempt}
